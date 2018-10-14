@@ -1,0 +1,59 @@
+﻿<sw:ChildWindow x:Class="InventoryManagement.Dialogs.AddCompanyDialog.AddCompanyDialogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:sw="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagement.Dialogs.AddCompanyDialog"
+        mc:Ignorable="d" IsOpen="{Binding IsAddCompanyDialog}" 
+        TitleBarBackground="Black"
+        AllowMove="True" ShowCloseButton="True">
+
+    <sw:ChildWindow.OverlayBrush>
+        <SolidColorBrush Opacity="0.5" Color="{StaticResource Gray2}" />
+    </sw:ChildWindow.OverlayBrush>
+
+    <sw:ChildWindow.TitleTemplate>
+        <DataTemplate>
+            <TextBlock Text="Add Company" FontSize="14" FontFamily="Helvetica" Foreground="White" Margin="10,0,0,0"/>
+        </DataTemplate>
+    </sw:ChildWindow.TitleTemplate>
+
+    <Grid Height="300" Width="600" Grid.Row="1" Margin="30" ShowGridLines="False">
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBox}">
+                <Setter Property="Height" Value="34"/>
+                <Setter Property="Padding" Value="8"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Company Name" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Company.Name}" />
+        <TextBlock Text="Address " Grid.Row="1" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1"/>
+        <TextBlock Text="E-Mail Id" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1"/>
+        <TextBlock Text="Mobile Number" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1"/>
+        <TextBlock Text="GSTIN" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="4" Grid.Column="1"/>
+        <StackPanel Grid.Row="6" Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" Margin="10,0,0,0">
+            <Button Content="Save" x:Name="SaveCompany"/>
+            <Button Content="Clear" x:Name="ClearData" Margin="10,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</sw:ChildWindow>

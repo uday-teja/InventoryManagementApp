@@ -1,0 +1,23 @@
+<Controls:MetroWindow
+        x:Class="InventoryManagement.ShellView"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" WindowState="Maximized">
+    <Controls:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <TextBlock Text="Inventory Management" Margin="10,6,0,0" FontSize="14"/>
+        </DataTemplate>
+    </Controls:MetroWindow.TitleTemplate>
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ContentControl x:Name="LeftNavigation" Grid.Column="0"/>
+        <ContentControl x:Name="MainView" Grid.Column="1"/>
+    </Grid>
+
+</Controls:MetroWindow>

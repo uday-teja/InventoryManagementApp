@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="InventoryManagement.Settings.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:InventoryManagement.Settings"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Settings" FontSize="24" Background="#f9f9f9" FontFamily="Helvetica" Padding="15"/>
+        <Button Grid.Row="1" Content="Add" Width="80" Height="30" Background="#4286f4" x:Name="AddCompany"
+                Foreground="White" BorderThickness="0" Margin="10"/>
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="Company Name" FontSize="16"/>
+            <TextBox Width="150"/>
+        </StackPanel>
+        <ContentControl x:Name="AddCompanyDialog"  Grid.RowSpan="5"/>
+    </Grid>
+</UserControl>
