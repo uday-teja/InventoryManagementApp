@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Caliburn.Micro;
-using InventoryManagement.Data;
-using InventoryManagement.Model.Models;
+using UiModel = InventoryManagement.Model.Models;
+using DataModel = InventoryManagement.Data;
 
 namespace InventoryManagement.Dialogs.AddCompanyDialog
 {
     public class AddCompanyDialogViewModel : BaseMainViewModel
     {
+        DataModel.Service Service;
+
         private bool isAddCompanyDialog;
 
         public bool IsAddCompanyDialog
@@ -23,9 +25,9 @@ namespace InventoryManagement.Dialogs.AddCompanyDialog
             }
         }
 
-        private Model.Models.Company company;
+        private UiModel.Company company;
 
-        public Model.Models.Company Company
+        public UiModel.Company Company
         {
             get { return company; }
             set
@@ -35,16 +37,16 @@ namespace InventoryManagement.Dialogs.AddCompanyDialog
             }
         }
 
-        public SQLiteService sQLiteService { get; set; }
 
         public AddCompanyDialogViewModel()
         {
-            Company = new Model.Models.Company();
+            Company = new UiModel.Company();
+            Service = new DataModel.Service();
         }
 
         public void SaveCompany()
         {
-            this.sQLiteService = new SQLiteService("Uday");
+            Service.AddCompany(AutoMapper.Mapper.Map<UiModel.Company, DataModel.Company>(Company));
         }
     }
 }

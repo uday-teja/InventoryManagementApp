@@ -57,7 +57,7 @@
     <Compile Include="Models\DeliveryChallan.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\PurchaseOrder.cs" />
-    <Compile Include="Models\UserBankDetails.cs" />
+    <Compile Include="Models\Bank.cs" />
     <Compile Include="Models\UserDetails.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

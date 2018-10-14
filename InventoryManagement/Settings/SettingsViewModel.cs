@@ -24,8 +24,6 @@ namespace InventoryManagement.Settings
             }
         }
 
-       
-
         public SettingsViewModel()
         {
             this.AddCompanyDialog = IoC.Get<AddCompanyDialogViewModel>();

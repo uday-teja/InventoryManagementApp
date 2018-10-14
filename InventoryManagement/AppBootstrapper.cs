@@ -20,7 +20,7 @@ namespace InventoryManagement
         protected override void Configure()
         {
             container = new SimpleContainer();
-
+            BootstrapAutoMapper.InitializeAutoMapper();
             container.Singleton<IWindowManager, WindowManager>();
             container.Singleton<IEventAggregator, EventAggregator>();
             container.Singleton<ShellViewModel>();
